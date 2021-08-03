@@ -1,7 +1,6 @@
 import "../App.css";
 import Header from "./Header";
 import RestaurantContainer from "./RestaurantContainer";
-import Search from "./Search";
 import { useEffect, useState } from "react";
 
 function App() {

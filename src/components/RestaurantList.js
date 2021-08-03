@@ -1,7 +1,7 @@
-import RestaurantCard from "./RestaurantCard";
+import Restaurant from "./Restaurant";
 
 // prettier-ignore
-function RestaurantList ( { restaurants, setRestaurants, setShowReview, search } ) {
+function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, reviews, setReviews } ) {
 
 
   // const filteredRestaurants = () => {
@@ -9,36 +9,28 @@ function RestaurantList ( { restaurants, setRestaurants, setShowReview, search }
   //     <div></div>
   //   )
   // }
+
+
   
-  const displayRestaurants = restaurants.map((restaurant, index) => {
+  const displayRestaurants = restaurants.map( ( restaurant, index ) => {
     return (
-      <RestaurantCard
+      <Restaurant
         key={index}
-        id={restaurant.id}
-        title={restaurant.title}
-        style={restaurant.style}
-        street={restaurant.street}
-        city={restaurant.city}
-        image_url={restaurant.image_url}
-        like={restaurant.like}
-        unlike={restaurant.unlike}
-        restaurants={restaurants}
+        restaurant={restaurant}
         setShowReview={setShowReview}
-      />
-    )
-  })
+        reviews={reviews.filter( review => restaurant.id === review.restaurant_id)}
+        />
+      )
+    })
+
+  
 
 
+  // prettier-ignore
   return (
-    <div>
-      <ul
-        style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        marginTop: '200px'
-        }}
-      >
-      {displayRestaurants}
+    <div className="display-container">
+      <ul className="ul-container">
+        {displayRestaurants}
       </ul>
     </div>
   );
@@ -46,29 +38,4 @@ function RestaurantList ( { restaurants, setRestaurants, setShowReview, search }
 
 export default RestaurantList;
 
-// function WatchList({ movies, removeMovie, onEditMovie }) {
-//   const displayMovies = movies.map((movie, index) => {
-//     return (
-//       <WatchListCard
-//         key={index}
-//         id={movie.id}
-//         img={movie.img}
-//         likeButton={movie.likeButton}
-//         dislikeButton={movie.dislikeButton}
-//         removeMovie={removeMovie}
-//         onEditMovie={onEditMovie}
-//       />
-//     );
-//   });
-//   return (
-//     <ul
-//       style={{
-//         display: "flex",
-//         flexWrap: "wrap",
-//         marginTop: "200px",
-//       }}
-//     >
-//       {displayMovies}
-//     </ul>
-//   );
-// }
+//  <ul> style={{display: "flex", flexWrap: "wrap",marginTop: "200px"}}
