@@ -12,9 +12,9 @@ body {
   max-width: 380px;
 }
 
-.front-card:hover {
+/* .front-card:hover {
   transform: rotateY(180deg);
-}
+} */
 
 .restaurant-list {
   max-width: 1200px;

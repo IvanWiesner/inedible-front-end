@@ -1,7 +1,7 @@
 import React from "react";
 
 // prettier-ignore
-function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, restaurants, setShowReview } ) {
+function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, restaurants, setShowReview, toggleReviews} ) {
   
   const handleLike = () => {
     return (
@@ -31,6 +31,7 @@ function RestaurantCardFront ( { id, title, style, street, city, image_url, like
       <div className="text-area" >
         <p>Type Of Cuisine: {style}</p>
         <p>Address: {street}, {city}</p>
+        <button onClick={toggleReviews}>See Reviews</button>
         <button onClick={handleLike}>🤮{like}</button>
         <button onClick={handleUnlike}>😋{unlike}</button>
       </div>

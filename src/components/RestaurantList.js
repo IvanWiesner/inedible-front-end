@@ -4,13 +4,10 @@ import Restaurant from "./Restaurant";
 function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, reviews, setReviews } ) {
 
 
-  // const filteredRestaurants = () => {
-  //   return (
-  //     <div></div>
-  //   )
-  // }
 
+ 
 
+  // console.log('RestaurantList Component', reviews)
   
   const displayRestaurants = restaurants.map( ( restaurant, index ) => {
     return (
@@ -18,8 +15,8 @@ function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, 
         key={index}
         restaurant={restaurant}
         setShowReview={setShowReview}
-        reviews={reviews.filter( review => restaurant.id === review.restaurant_id)}
-        />
+        reviews={reviews.filter( review => restaurant.id === review.restaurant_id )}
+      />
       )
     })
 

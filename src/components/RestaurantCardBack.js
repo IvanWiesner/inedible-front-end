@@ -1,5 +1,9 @@
 // prettier-ignore
-function RestaurantCardBack ( {reviews} ) {
+function RestaurantCardBack ( { reviews } ) {
+  
+  console.log( 'RestaurantCardBack Component', reviews )
+  
+  
   
   const displayReviews = reviews.map((review, index) => {
     return (
@@ -15,6 +19,7 @@ function RestaurantCardBack ( {reviews} ) {
   return (
     <div className="card-back">
       {displayReviews}
+        
     </div>
   )
 }

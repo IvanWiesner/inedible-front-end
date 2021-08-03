@@ -8,6 +8,8 @@ function RestaurantContainer({restaurants, setRestaurants, search, setSearch}) {
   const [ showReview, setShowReview ] = useState( false );
   const [ reviews, setReviews ] = useState( [] )
   
+
+  
 useEffect(() => {
   fetch("http://localhost:9292/reviews")
     .then((resp) => resp.json())
@@ -26,6 +28,7 @@ useEffect(() => {
           search={search}
           reviews={reviews}
           setReviews={setReviews}
+          
         />
         <Content showReview={showReview} setShowReview={setShowReview} />
       </div>
