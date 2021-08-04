@@ -1,5 +1,10 @@
 body {
   background-color: #87ab08;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar-track {
+  color:red;
 }
 
 .front-card,
@@ -7,6 +12,19 @@ body {
   background-color: #f8f0e3;
   border-radius: 10px;
 }
+
+.card-back {
+  overflow-y: scroll;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: "25px";
+  max-height: 540px;
+  border-radius: 10px;
+}
+/* .card-back::-webkit-scrollbar-track-piece {
+  color:red;
+} */
 .restaurant-list-ul {
   padding: 60px;
   display: grid;
@@ -31,6 +49,11 @@ body {
   padding-bottom: 25px;
 }
 
+.comment-section {
+  text-align: center;
+  align-items: center;
+}
+
 .btn {
   justify-content: space-between;
   justify-self: center;
@@ -39,9 +62,9 @@ body {
   padding: 8px;
 }
 
-.comment-text {
+/* .comment-text {
   text-align: center;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-}
+} */

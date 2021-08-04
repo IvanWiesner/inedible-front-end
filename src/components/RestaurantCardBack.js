@@ -20,7 +20,7 @@ function RestaurantCardBack ( { reviews, toggleReviews, handleNewReview, restaur
       body: JSON.stringify(newReviewObject)
     })
     .then(res => res.json())
-    .then(data => handleNewReview(data))
+    .then(data => handleNewReview)
   }
   
   // console.log( 'RestaurantCardBack Component', reviews )
