@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search() {
+function Search({ search, setSearch }) {
   return (
     <div className="search-bar">
       <input
@@ -8,6 +8,8 @@ function Search() {
         type="text"
         placeholder="Search Restaurants..."
         name="search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
     </div>
   );

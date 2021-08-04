@@ -20,9 +20,10 @@ function RestaurantCardBack ( { reviews, toggleReviews } ) {
 
 
   return (
-    <div onClick={toggleReviews} className="card-back">
+    <div className="card-back">
       {displayReviews}
-      <button onClick={handleClick}></button>
+      <button onClick={toggleReviews}>Hide Reviews</button>
+      <button onClick={handleClick}>Add Review</button>
     </div>
   )
 }

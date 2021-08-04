@@ -32,21 +32,20 @@ body {
 }
 
 .front-card,
-.back-card {
+.card-back {
   /* position: absolute; */
   width: 100%;
   height: 100%;
-  background-color: white;
-  backface-visibility: hidden;
+  background-color: #f8f0e3;
+  /* backface-visibility: hidden; */
   border-radius: 10px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.back-card {
-  transform: rotateY(180deg);
+.card-back {
+  /* transform: rotateY(180deg); */
   background-color: #f8f0e3;
   padding: 30px;
-
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;

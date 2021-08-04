@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import RestaurantList from "./RestaurantList";
-import Content from "./Content";
 import Search from "./Search";
 
 // prettier-ignore
@@ -28,9 +27,7 @@ useEffect(() => {
           search={search}
           reviews={reviews}
           setReviews={setReviews}
-          
         />
-        <Content showReview={showReview} setShowReview={setShowReview} />
       </div>
     </div>
   );

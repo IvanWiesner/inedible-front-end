@@ -2,14 +2,19 @@ import Restaurant from "./Restaurant";
 
 // prettier-ignore
 function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, reviews, setReviews } ) {
-
-
+    
+  
+    const filterRestaurants = () => {
+      return restaurants.filter((restaurant) => 
+      restaurant.title.toLowerCase().includes(search.toLowerCase())
+      || restaurant.style.toLowerCase().includes(search.toLowerCase()))
+    }
 
  
 
   // console.log('RestaurantList Component', reviews)
   
-  const displayRestaurants = restaurants.map( ( restaurant, index ) => {
+  const displayRestaurants = filterRestaurants().map( ( restaurant, index ) => {
     return (
       <Restaurant
         key={index}
