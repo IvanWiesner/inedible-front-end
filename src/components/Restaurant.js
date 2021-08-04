@@ -13,7 +13,7 @@ function Restaurant({ restaurant, reviews, setShowReview }) {
   // console.log("Restaurant Component", reviews);
 
   return (
-    <div>
+    <>
       {front ?
       <RestaurantCardFront
         id={restaurant.id}
@@ -32,7 +32,7 @@ function Restaurant({ restaurant, reviews, setShowReview }) {
       toggleReviews={toggleReviews} />
       }
 
-    </div>
+    </>
   );
 }
 

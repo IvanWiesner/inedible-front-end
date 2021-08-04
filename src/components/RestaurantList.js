@@ -30,11 +30,9 @@ function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, 
 
   // prettier-ignore
   return (
-    <div className="display-container">
-      <ul className="ul-container">
+      <ul className="restaurant-list-ul">
         {displayRestaurants}
       </ul>
-    </div>
   );
 }
 

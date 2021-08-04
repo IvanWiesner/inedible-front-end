@@ -41,8 +41,7 @@ function handleUnlike() {
   return (
     <div className = "front-card">
       <h3 style={{textAlign: "center", fontSize: "25px"}}>{title}</h3>
-      <img className='image' src={image_url} alt="pic"
-        style={{ width: 330, height: 300, padding: "25px", borderRadius: "5px" }} />
+      <img className='image' src={image_url} alt="pic"/>
       
       <div className="text-area" >
         <h4>Type Of Cuisine: {style}</h4>
