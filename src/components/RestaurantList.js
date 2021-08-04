@@ -1,7 +1,7 @@
 import Restaurant from "./Restaurant";
 
 // prettier-ignore
-function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, reviews, setReviews } ) {
+function RestaurantList ( { restaurants, setRestaurants, search, reviews, setReviews, handleNewReview } ) {
     
   
     const filterRestaurants = () => {
@@ -19,8 +19,8 @@ function RestaurantList ( { restaurants, setRestaurants, setShowReview, search, 
       <Restaurant
         key={index}
         restaurant={restaurant}
-        setShowReview={setShowReview}
         reviews={reviews.filter( review => restaurant.id === review.restaurant_id )}
+        handleNewReview={handleNewReview}
       />
       )
     })

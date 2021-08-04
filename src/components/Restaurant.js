@@ -2,7 +2,7 @@ import RestaurantCardFront from "./RestaurantCardFront";
 import RestaurantCardBack from "./RestaurantCardBack";
 import { useState } from "react";
 
-function Restaurant({ restaurant, reviews, setShowReview }) {
+function Restaurant({ restaurant, reviews, handleNewReview }) {
   const [front, setFront] = useState(true);
 
   function toggleReviews() {
@@ -24,12 +24,14 @@ function Restaurant({ restaurant, reviews, setShowReview }) {
         image_url={restaurant.image_url}
         like={restaurant.like}
         unlike={restaurant.unlike}
-        setShowReview={setShowReview}
         toggleReviews={toggleReviews}
       /> :
       <RestaurantCardBack 
       reviews={reviews}
-      toggleReviews={toggleReviews} />
+      toggleReviews={toggleReviews}
+      handleNewReview={handleNewReview}
+      restaurant_id={restaurant.id}
+      />
       }
 
     </>

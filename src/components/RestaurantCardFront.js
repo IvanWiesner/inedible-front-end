@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // prettier-ignore
-function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, restaurants, setShowReview, toggleReviews} ) {
+function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, toggleReviews} ) {
   const [madeLike, setMadeLike] = useState(like)
   const [madeUnlike, setMadeUnlike] = useState(unlike)
 

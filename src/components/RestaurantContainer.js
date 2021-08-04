@@ -4,9 +4,12 @@ import Search from "./Search";
 
 // prettier-ignore
 function RestaurantContainer({restaurants, setRestaurants, search, setSearch}) {
-  const [ showReview, setShowReview ] = useState( false );
   const [ reviews, setReviews ] = useState( [] )
-  
+
+
+  function handleNewReview (newReview) {
+    setReviews([...reviews, newReview])
+  }
 
   
 useEffect(() => {
@@ -23,11 +26,11 @@ useEffect(() => {
         <RestaurantList
           restaurants={restaurants}
           setRestaurants={setRestaurants}
-          setShowReview={setShowReview}
           search={search}
           reviews={reviews}
           setReviews={setReviews}
-        />
+          handleNewReview={handleNewReview}
+        /> 
       </div>
     </div>
   );

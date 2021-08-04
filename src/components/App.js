@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 function App() {
   const [restaurants, setRestaurants] = useState([]);
   const [search, setSearch] = useState("");
+  
 
   useEffect(() => {
     fetch("http://localhost:9292/restaurants")

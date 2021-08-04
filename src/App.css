@@ -38,3 +38,10 @@ body {
   margin-left: 8px;
   padding: 8px;
 }
+
+.comment-text {
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+}
