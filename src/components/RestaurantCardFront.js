@@ -25,15 +25,16 @@ function RestaurantCardFront ( { id, title, style, street, city, image_url, like
 
   return (
     <div className = "front-card">
-      <h3>{title}</h3>
-      <img className='image' src={image_url} alt="pic" style={{width: 200, height: 299}}/>
+      <h3 style={{textAlign: "center", fontSize: "25px"}}>{title}</h3>
+      <img className='image' src={image_url} alt="pic"
+        style={{ width: 330, height: 300, padding: "25px", borderRadius: "5px" }} />
       
       <div className="text-area" >
-        <p>Type Of Cuisine: {style}</p>
+        <h4>Type Of Cuisine: {style}</h4>
         <p>Address: {street}, {city}</p>
-        <button onClick={toggleReviews}>See Reviews</button>
-        <button onClick={handleLike}>🤮{like}</button>
-        <button onClick={handleUnlike}>😋{unlike}</button>
+        <button className="btn" onClick={toggleReviews}>See Reviews</button>
+        <button className="btn" onClick={handleLike}>🤮{like}</button>
+        <button className="btn" onClick={handleUnlike}>😋{unlike}</button>
       </div>
       
     </div>
