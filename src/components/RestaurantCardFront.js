@@ -1,25 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 
 // prettier-ignore
 function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, restaurants, setShowReview, toggleReviews} ) {
-  
-  const handleLike = () => {
-    return (
-      <div>
-
-      </div>
-    )
-  }
-
-  const handleUnlike = () => {
-    return <div>
-    
-  </div>
-  };
+  const [madeLike, setMadeLike] = useState(like)
+  const [madeUnlike, setMadeUnlike] = useState(unlike)
 
 
+  function handleLike() {
+    setMadeLike(madeLike + 1)
+    fetch(`http://localhost:9292/restaurants/${id}`, {
+      method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          "Accept": "application/json"
+    },
+    body: JSON.stringify({
+      like: madeLike + 1,
+      unlike: madeUnlike
+    })
+  })
+}
 
-
+function handleUnlike() {
+  setMadeUnlike(madeUnlike + 1)
+  fetch(`http://localhost:9292/restaurants/${id}`, {
+    method: "PATCH",
+      headers: {
+        "Content-type": "application/json",
+        "Accept": "application/json"
+  },
+  body: JSON.stringify({
+    like: madeLike,
+    unlike: madeUnlike + 1
+  })
+})
+}
 
 
 
@@ -33,8 +48,8 @@ function RestaurantCardFront ( { id, title, style, street, city, image_url, like
         <h4>Type Of Cuisine: {style}</h4>
         <p>Address: {street}, {city}</p>
         <button className="btn" onClick={toggleReviews}>See Reviews</button>
-        <button className="btn" onClick={handleLike}>🤮{like}</button>
-        <button className="btn" onClick={handleUnlike}>😋{unlike}</button>
+        <button className="btn" onClick={handleLike}>🤮 {madeLike}</button>
+        <button className="btn" onClick={handleUnlike}>😋 {madeUnlike}</button>
       </div>
       
     </div>
@@ -44,8 +59,3 @@ function RestaurantCardFront ( { id, title, style, street, city, image_url, like
 
 export default RestaurantCardFront;
 
-// div for text-area style={{backgroundColor: 'white'}}
-
-// image tag style={{ boxShadow: "0 3px 5px 2px rgba(0, 0, 0, .3)", borderRadius: '3px', width: 250, height: 340 }}
-
-//  line 27 div style={{ display: "block", paddingLeft: "30px", paddingBottom: "35px"}}

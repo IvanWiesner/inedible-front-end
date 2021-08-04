@@ -1,8 +1,11 @@
 // prettier-ignore
-function RestaurantCardBack ( { reviews } ) {
+function RestaurantCardBack ( { reviews, toggleReviews } ) {
   
-  console.log( 'RestaurantCardBack Component', reviews )
-  
+  // console.log( 'RestaurantCardBack Component', reviews )
+  const handleClick = (e) => {
+   console.log("restaurantcardback", e)
+   e.stopPropagation()
+  }
   
   
   const displayReviews = reviews.map((review, index) => {
@@ -17,9 +20,9 @@ function RestaurantCardBack ( { reviews } ) {
 
 
   return (
-    <div className="card-back">
+    <div onClick={toggleReviews} className="card-back">
       {displayReviews}
-        
+      <button onClick={handleClick}></button>
     </div>
   )
 }

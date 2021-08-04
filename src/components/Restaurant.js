@@ -3,16 +3,18 @@ import RestaurantCardBack from "./RestaurantCardBack";
 import { useState } from "react";
 
 function Restaurant({ restaurant, reviews, setShowReview }) {
-  const [front, setFront] = useState(false);
+  const [front, setFront] = useState(true);
 
   function toggleReviews() {
     setFront(!front);
+    console.log("toggleReviews")
   }
 
   // console.log("Restaurant Component", reviews);
 
   return (
     <div>
+      {front ?
       <RestaurantCardFront
         id={restaurant.id}
         title={restaurant.title}
@@ -24,10 +26,12 @@ function Restaurant({ restaurant, reviews, setShowReview }) {
         unlike={restaurant.unlike}
         setShowReview={setShowReview}
         toggleReviews={toggleReviews}
-      />
-      <RestaurantCardBack reviews={reviews} />
+      /> :
+      <RestaurantCardBack 
+      reviews={reviews}
+      toggleReviews={toggleReviews} />
+      }
 
-      {/* {front ? <RestaurantCardFront /> : <RestaurantCardBack />} */}
     </div>
   );
 }
