@@ -12,15 +12,14 @@ body::-webkit-scrollbar-track {
 .card-back {
   background-color: #f8f0e3;
   border-radius: 10px;
+  max-height: 675px;
+  max-width: 600px;
+  min-width: 400px;
 }
 
 .card-back {
   overflow-y: scroll;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
   padding: "25px";
-  max-height: 540px;
   border-radius: 10px;
 }
 
@@ -71,17 +70,16 @@ body::-webkit-scrollbar-track {
   padding-bottom: 25px;
 }
 
-.comment-section {
-  text-align: center;
-  align-items: center;
+.btn {
+  width: 4vw;
+  height: 3vh;
+  background-color: #52cc7a;
+  margin-left: 5px;
+  border-radius: 10px;
 }
 
-.btn {
-  justify-content: space-between;
-  justify-self: center;
-  background-color: #52cc7a;
-  margin-left: 8px;
-  padding: 8px;
+.btn:active {
+  transform: scale(0.98);
 }
 
 .header {
@@ -130,4 +128,57 @@ body::-webkit-scrollbar-track {
   opacity: 0.7;
   margin-left: 35vw;
   margin-top: 6vh;
+}
+
+.restaurantName {
+  color: #6666cc;
+  text-shadow: -1px 0 #202020, 0 1px #202020, 1px 0 #202020, 0 -1px #202020;
+}
+
+.comment-text {
+  padding: 4px;
+  font-size: 25px;
+}
+
+.comment-time {
+  padding: 4px;
+  margin-top: -22px;
+  font-size: 13px;
+}
+
+.new-review-input {
+  height: 25px;
+  width: 45%;
+  font-size: 14px;
+  padding: 5px;
+  outline: none;
+  border-radius: 7px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  opacity: 0.5;
+  margin-left: 6vw;
+  margin-top: -5vh;
+}
+
+.add-review-btn {
+  margin-top: 5px;
+  display: table;
+  margin-left: 18rem;
+  border-radius: 7px;
+  background-color: #52cc7a;
+}
+
+.hide-review-btn {
+  border-radius: 7px;
+  margin-left: 180px;
+  margin-top: -21px;
+  display: table;
+  background-color: #52cc7a;
+}
+
+.add-review-btn:active {
+  transform: scale(0.98);
+}
+
+.hide-review-btn:active {
+  transform: scale(0.98);
 }

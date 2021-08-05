@@ -42,13 +42,13 @@ function handleUnlike() {
 
   return (
     <div className = "front-card">
-      <h3 style={{textAlign: "center", fontSize: "25px"}}>{title}</h3>
-      <img className='image' src={image_url} alt="pic"/>
+      <h3 className="restaurantName" style={{textAlign: "center", fontSize: "32px"}}>{title}</h3>
+      <img className='image' src={image_url} alt="pic" style={{borderRadius: "100px"}}/>
       
       <div className="text-area" >
-        <h4>Type Of Cuisine: {style}</h4>
-        <p>Address: {street}, {city}</p>
-        <button className="btn" onClick={toggleReviews}>See Reviews</button>
+        <h3 className="frontCardInfo">Type Of Cuisine</h3> <p>{style}</p> 
+        <h3 className="frontCardInfo">Address</h3> <p>{street}, {city}</p> 
+        <button className="btn" onClick={toggleReviews}>Reviews 👁</button>
         <button className="btn" onClick={handleLike}>🤮 {madeLike}</button>
         <button className="btn" onClick={handleUnlike}>😋 {madeUnlike}</button>
       </div>

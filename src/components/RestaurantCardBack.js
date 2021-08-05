@@ -24,7 +24,7 @@ function RestaurantCardBack({
       body: JSON.stringify(newReviewObject),
     })
       .then((res) => res.json())
-      .then((data) => handleNewReview(data));
+      .then((data) => handleNewReview(data), setComment(""));
   }
 
   // console.log( 'RestaurantCardBack Component', reviews )
@@ -33,7 +33,7 @@ function RestaurantCardBack({
     return (
       <article key={index}>
         <p className="comment-text">Comment: {review.comment}</p>
-        <p>- {review.created_at}</p>
+        <p className="comment-time">Submitted At: {review.created_at}</p>
       </article>
     );
   });
@@ -42,19 +42,24 @@ function RestaurantCardBack({
     <div className="card-back">
       {displayReviews}
       <div className="new-review-form">
-        <h3>New Review</h3>
+        <h3 style={{ textAlign: "center" }}>New Review</h3>
         <form onSubmit={handleSubmit}>
           <input
+            className="new-review-input"
             type="text"
             name="comment"
-            placeholder="Comment"
+            placeholder="Add New Comment"
             value={comment}
             onChange={(e) => setComment(e.target.value)}
           />
-          <button type="submit">Add Review</button>
+          <button className="add-review-btn" type="submit">
+            Add Review
+          </button>
         </form>
       </div>
-      <button onClick={toggleReviews}>Hide Reviews</button>
+      <button className="hide-review-btn" onClick={toggleReviews}>
+        Hide Reviews
+      </button>
     </div>
   );
 }
