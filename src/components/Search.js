@@ -2,8 +2,9 @@ import React from "react";
 
 function Search({ search, setSearch }) {
   return (
-    <div className="search-bar">
+    <div>
       <input
+        className="search-bar"
         id="search-bar"
         type="text"
         placeholder="Search Restaurants..."

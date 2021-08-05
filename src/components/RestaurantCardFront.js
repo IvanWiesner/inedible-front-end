@@ -3,7 +3,9 @@ import React, { useState } from "react";
 // prettier-ignore
 function RestaurantCardFront ( { id, title, style, street, city, image_url, like, unlike, toggleReviews} ) {
   const [madeLike, setMadeLike] = useState(like)
-  const [madeUnlike, setMadeUnlike] = useState(unlike)
+  const [ madeUnlike, setMadeUnlike ] = useState( unlike )
+
+
 
 
   function handleLike() {
@@ -50,11 +52,9 @@ function handleUnlike() {
         <button className="btn" onClick={handleLike}>🤮 {madeLike}</button>
         <button className="btn" onClick={handleUnlike}>😋 {madeUnlike}</button>
       </div>
-      
-    </div>
+  </div>
   
   )
 }
 
 export default RestaurantCardFront;
-
