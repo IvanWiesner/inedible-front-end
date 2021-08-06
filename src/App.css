@@ -1,11 +1,6 @@
 body {
   background-color: #87ab08;
   scroll-behavior: smooth;
-  /* cursor: pointer; */
-}
-
-body::-webkit-scrollbar-track {
-  color: red;
 }
 
 .front-card,
@@ -19,28 +14,26 @@ body::-webkit-scrollbar-track {
 
 .card-back {
   overflow-y: scroll;
-  padding: "25px";
+  padding: auto;
   border-radius: 10px;
 }
 
 .card-back::-webkit-scrollbar {
   width: 2em;
 }
+
 .card-back::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
+
 .card-back::-webkit-scrollbar-thumb {
   background-color: #52cc7a;
-
-  cursor: pointer;
-  /* outline: 1px solid rgb(0, 0, 0); */
   -webkit-border-radius: 10px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   background-image: url("https://stickershop.line-scdn.net/stickershop/v1/product/1358278/LINEStorePC/main.png;compress=true");
   background-position: center center;
-  /* background-size: contain; */
   background-size: 4rem;
   background-repeat: no-repeat;
 }
@@ -147,9 +140,9 @@ body::-webkit-scrollbar-track {
 }
 
 .new-review-input {
-  height: 25px;
+  height: 30px;
   width: 45%;
-  font-size: 14px;
+  font-size: 22px;
   padding: 5px;
   outline: none;
   border-radius: 7px;
@@ -157,6 +150,8 @@ body::-webkit-scrollbar-track {
   opacity: 0.5;
   margin-left: 6vw;
   margin-top: -5vh;
+  color: #004617;
+  font-weight: bold;
 }
 
 .add-review-btn {
